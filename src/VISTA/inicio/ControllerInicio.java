@@ -39,6 +39,6 @@ public class ControllerInicio implements Initializable{
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        logoEstambul.setImage(new Image ("/IMAGENES/EstambulSilueta.png"));
+        logoEstambul.setImage(new Image ("/IMAGENES/img.png"));
     }
 }

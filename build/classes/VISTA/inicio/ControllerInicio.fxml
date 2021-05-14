@@ -18,6 +18,7 @@
                   <ImageView fx:id="logoEstambul" fitHeight="150.0" fitWidth="200.0" layoutX="5.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </Pane>
+            <Pane fx:id="cargaFXML" layoutX="209.0" prefHeight="580.0" prefWidth="711.0" />
          </children>
       </Pane>
     </children>
