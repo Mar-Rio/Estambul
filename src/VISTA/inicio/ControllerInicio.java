@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 
 /**
  * Clase para la creacion de metodos para comunicar la GUI con la lógica del
@@ -33,12 +34,14 @@ public class ControllerInicio implements Initializable{
     private JFXButton botonDormir;
     @FXML
     private JFXButton botonHacer;
+    @FXML
+    private Pane cargaFXML;
 
    
 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        logoEstambul.setImage(new Image ("/IMAGENES/img.png"));
+
     }
 }
