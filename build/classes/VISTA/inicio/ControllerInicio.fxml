@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VISTA.inicio.ControllerInicio">
+    <children>
+      <Pane prefHeight="580.0" prefWidth="755.0">
+         <children>
+            <Pane prefHeight="580.0" prefWidth="209.0" style="-fx-background-color: #2271B3;">
+               <children>
+                  <JFXButton fx:id="botonHome" buttonType="RAISED" layoutX="28.0" layoutY="159.0" prefHeight="33.0" prefWidth="154.0" ripplerFill="#1b1b1b" text="HOME" textFill="WHITE" />
+                  <JFXButton fx:id="botonComer" buttonType="RAISED" layoutX="28.0" layoutY="320.0" prefHeight="33.0" prefWidth="154.0" ripplerFill="#1b1b1b" text="¿DONDE COMER?" textFill="WHITE" />
+                  <JFXButton fx:id="botonDormir" buttonType="RAISED" layoutX="28.0" layoutY="287.0" prefHeight="33.0" prefWidth="154.0" ripplerFill="#1b1b1b" text="¿DONDE DORMIR?" textFill="WHITE" />
+                  <JFXButton fx:id="botonHacer" buttonType="RAISED" layoutX="28.0" layoutY="254.0" prefHeight="33.0" prefWidth="154.0" ripplerFill="#1b1b1b" text="¿QUE HACER?" textFill="WHITE" />
+                  <ImageView fx:id="logoEstambul" fitHeight="150.0" fitWidth="200.0" layoutX="5.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+    </children>
+</StackPane>
