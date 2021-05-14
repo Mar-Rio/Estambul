@@ -19,7 +19,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../VISTA/inicio/ControllerInicio.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../VISTA/inicio/Inicio.fxml"));
         primaryStage.setTitle("ESTAMBUL  TURISMO");
         primaryStage.getIcons().add(new Image("/IMAGENES/pnglogo.png"));
         primaryStage.setScene(new Scene(root));

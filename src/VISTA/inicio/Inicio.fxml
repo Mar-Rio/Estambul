@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VISTA.inicio.InicioController">
+    <children>
+      <Pane prefHeight="580.0" prefWidth="755.0">
+         <children>
+            <Pane prefHeight="580.0" prefWidth="209.0" style="-fx-background-color: #2271B3;">
+               <children>
+                  <JFXButton fx:id="botonHome" layoutX="48.0" layoutY="159.0" onAction="#alPulsarHome" prefHeight="33.0" prefWidth="154.0" ripplerFill="#1b1b1b" text="HOME" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect></JFXButton>
+                  <JFXButton fx:id="botonComer" buttonType="RAISED" layoutX="49.0" layoutY="320.0" onAction="#alPulsarComer" prefHeight="33.0" prefWidth="154.0" ripplerFill="#1b1b1b" text="¿DONDE COMER?" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect></JFXButton>
+                  <JFXButton fx:id="botonDormir" buttonType="RAISED" layoutX="49.0" layoutY="287.0" onAction="#alPulsarDormir" prefHeight="33.0" prefWidth="154.0" ripplerFill="#1b1b1b" text="¿DONDE DORMIR?" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect></JFXButton>
+                  <JFXButton fx:id="botonHacer" buttonType="RAISED" layoutX="49.0" layoutY="254.0" onAction="#alPulsarHacer" prefHeight="33.0" prefWidth="154.0" ripplerFill="#1b1b1b" text="¿QUE HACER?" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect></JFXButton>
+                  <ImageView fx:id="logoEstambul" fitHeight="124.0" fitWidth="177.0" layoutX="51.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                     <effect>
+                        <Blend />
+                     </effect>
+                     <image>
+                        <Image url="@../../IMAGENES/SantaSofia.png" />
+                     </image></ImageView>
+                  <Pane prefHeight="580.0" prefWidth="41.0" style="-fx-background-color: white;">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.7252174019813538" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Pane>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Pane>
+            <Pane fx:id="panelCarga" layoutX="209.0" prefHeight="580.0" prefWidth="711.0" />
+         </children>
+      </Pane>
+    </children>
+</StackPane>
