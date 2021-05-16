@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="711.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VISTA.dormir.DormirController">
+    <children>
+      <Pane prefHeight="580.0" prefWidth="711.0">
+         <children>
+            <Label layoutX="84.0" layoutY="32.0" prefHeight="103.0" prefWidth="543.0" text="DONDE DORMIR">
+               <font>
+                  <Font size="70.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+    </children>
+</StackPane>
