@@ -3,7 +3,7 @@ USE packsTuristicos ;
 
 
 CREATE TABLE IF NOT EXISTS usuarios (
-   id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   rol ENUM('admin', 'cliente') NOT NULL,
   nombre VARCHAR(45) NOT NULL,
   mail VARCHAR(45) NOT NULL,
