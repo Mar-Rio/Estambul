@@ -35,6 +35,7 @@ public class ActividadesDAO {
             actividad.setNombre(rs.getString("nombre"));
             actividad.setDescripcion(rs.getString("descripcion"));
             actividad.setImagen(rs.getString("imagen"));
+            actividad.setUrl(rs.getString("url"));
             actividad.setCalidad(rs.getString("calidad"));
             actividad.setTipo(nombreTipo(rs.getString("tipo")));
             actividad.setPrecio(rs.getInt("precio"));
