@@ -5,6 +5,7 @@
  */
 package DATOS.BDA;
 
+import static DATOS.BDA.ConexionBDA.conn;
 import MODELO.Actividades;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -68,6 +69,39 @@ public class ActividadesDAO {
             nombre = rs.getString("nombre");
         }
         return nombre;
+    }
+
+    public boolean borrar(int id) throws SQLException {
+        boolean borrado = false;
+        String sql = "DELETE FROM actividades WHERE id ='" + id + "";
+        PreparedStatement ps = ConexionBDA.conn.prepareStatement(sql);
+        int num_filas = ps.executeUpdate(sql);
+        if (num_filas == 1) {
+            borrado = true;
+        }
+        return borrado;
+    }
+
+    public int insertar(Actividades nuevaActividad) throws SQLException {
+        int posicion = actividadesDisponibles.size() + 1;
+        boolean insertado = false;
+        String sql = "INSERT INTO actividades VALUES (?,?,?,?,?,?,?)";
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ps.setInt(1, posicion);
+        ps.setString(2, nuevaActividad.getNombre());
+        ps.setString(3, nuevaActividad.getDescripcion());
+        ps.setString(4, nuevaActividad.getImagen());
+        ps.setString(4, nuevaActividad.getUrl());
+        ps.setString(5, nuevaActividad.getCalidad());
+        ps.setString(6, nuevaActividad.getTipo());
+        ps.setInt(7, nuevaActividad.getPrecio());       
+        return ps.executeUpdate();
+    }
+    
+    public int update(Actividades actividad) throws SQLException {
+        borrar(actividad.getId());
+        return insertar(actividad);
+        
     }
 
 }
