@@ -5,72 +5,39 @@
  */
 package DATOS.BDA;
 
+import static DATOS.BDA.ConexionBDA.conn;
+import MODELO.Packs;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Adrian Pardo Moreno
  */
 public class PacksDAO {
-    private int idPack,
-            numLinea,
-            idActividad,
-            numPlazas;
-    private static int contador = 1;
-    private LocalDate fechaInicio,
-            fechaFin;
 
-    public PacksDAO() {
-        numLinea = contador++;
-    }  
-    
-    public int getIdPack() {
-        return idPack;
+    private List<Packs> actividadesEnPack = new ArrayList<>();
+//Devuelve 2 SQLexceptions: Fallo conexion y fallo insert
+//Para cuando una actividad esté seleccionada y tenga las plazas y fechas. 
+    //Se inserta en tabla detalle_pack y se guarda un objeto PacksDao en actividadesEnPack.
+
+    public void guardarActividadEnPack(int idActividad, int plazas, LocalDate inicio,
+            LocalDate fin) throws SQLException {
+        PreparedStatement ps = conn.prepareStatement("INSERT INTO detalle_packs VALUES (?,?,?,?,?)");
+        ps.setInt(1, idActividad);
+        ps.setInt(2, plazas);
+        ps.setDate(3, Date.valueOf(inicio));
+        ps.setDate(4, Date.valueOf(fin));
+        Packs nuevaActividad = new Packs();
+        nuevaActividad.setIdActividad(idActividad);
+        nuevaActividad.setNumPlazas(plazas);
+        nuevaActividad.setFechaInicio(inicio);
+        nuevaActividad.setFechaFin(fin);
+        actividadesEnPack.add(nuevaActividad);
     }
 
-    public void setIdPack(int idPack) {
-        this.idPack = idPack;
-    }
-
-    public int getNumLinea() {
-        return numLinea;
-    }
-
-    public void setNumLinea(int numLinea) {
-        this.numLinea = numLinea;
-    }
-
-    public int getIdActividad() {
-        return idActividad;
-    }
-
-    public void setIdActividad(int idActividad) {
-        this.idActividad = idActividad;
-    }
-
-    public int getNumPlazas() {
-        return numPlazas;
-    }
-
-    public void setNumPlazas(int numPlazas) {
-        this.numPlazas = numPlazas;
-    }
-
-    public LocalDate getFechaInicio() {
-        return fechaInicio;
-    }
-
-    public void setFechaInicio(LocalDate fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
-
-    public LocalDate getFechaFin() {
-        return fechaFin;
-    }
-
-    public void setFechaFin(LocalDate fechaFin) {
-        this.fechaFin = fechaFin;
-    }
-    
-    
 }
