@@ -19,7 +19,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <DatePicker layoutX="113.0" layoutY="406.0" />
+            <DatePicker fx:id="fechaReserva" layoutX="113.0" layoutY="406.0" />
             <DatePicker layoutX="113.0" layoutY="467.0" />
             <TableView fx:id="tablaActividades" editable="true" layoutX="66.0" layoutY="90.0" onMouseClicked="#eliminarActividad" prefHeight="200.0" prefWidth="584.0">
               <columns>

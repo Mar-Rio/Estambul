@@ -59,13 +59,7 @@ public class CarroController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         if (!gestionPack.getActividadesEnPack().isEmpty()) {
             actividadesGuardadas = FXCollections.observableArrayList(gestionPack.getActividadesEnPack());
-            tablaActividades.setItems(actividadesGuardadas);
-            nombre.setCellValueFactory(new PropertyValueFactory<>("nombreActividad"));
-            inicio.setCellValueFactory(new PropertyValueFactory<>("fechaInicio"));
-            fin.setCellValueFactory(new PropertyValueFactory<>("fechaFin"));
-            precioUnitario.setCellValueFactory(new PropertyValueFactory<>("precioUnitario"));
-            precioTotal.setCellValueFactory(new PropertyValueFactory<>("precioTotal"));
-
+            actualizarTabla();
         } else {
             tablaActividades.setPlaceholder(new Label("No hay ninguna actividad seleccionada."));
         }
@@ -84,9 +78,23 @@ public class CarroController implements Initializable {
                 int indice = tablaActividades.getSelectionModel().getSelectedIndex();
                 gestionPack.borrarActividad(indice);
                 actividadesGuardadas.remove(indice);
-                tablaActividades.setItems(actividadesGuardadas);
+                actualizarTabla();
             }
         }
 
+    }
+
+    private void actualizarTabla() {
+        tablaActividades.setItems(actividadesGuardadas);
+        nombre.setCellValueFactory(new PropertyValueFactory<>("nombreActividad"));
+        inicio.setCellValueFactory(new PropertyValueFactory<>("fechaInicio"));
+        fin.setCellValueFactory(new PropertyValueFactory<>("fechaFin"));
+        precioUnitario.setCellValueFactory(new PropertyValueFactory<>("precioUnitario"));
+        precioTotal.setCellValueFactory(new PropertyValueFactory<>("precioTotal"));
+
+    }
+
+    @FXML
+    private void guardarPack(ActionEvent event) {
     }
 }

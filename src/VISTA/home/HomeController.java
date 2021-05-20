@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -33,6 +34,8 @@ public class HomeController implements Initializable{
     private Label titulo;
     @FXML
     private Label titulo1;
+    @FXML
+    private Button botonCarro;
 
    
 
@@ -40,6 +43,10 @@ public class HomeController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        
+    }
+
+    @FXML
+    private void alCarro(ActionEvent event) {
     }
 
 
