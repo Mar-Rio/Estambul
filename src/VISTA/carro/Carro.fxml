@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="711.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VISTA.comer.ComerController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="711.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VISTA.carro.CarroController">
     <children>
       <Pane prefHeight="580.0" prefWidth="711.0">
          <children>
@@ -23,8 +23,8 @@
             <DatePicker layoutX="113.0" layoutY="467.0" />
             <TableView fx:id="tablaActividades" editable="true" layoutX="66.0" layoutY="90.0" onMouseClicked="#eliminarActividad" prefHeight="200.0" prefWidth="584.0">
               <columns>
-                <TableColumn fx:id="nombre" prefWidth="167.20001220703125" text="ACTIVIDAD" />
-                <TableColumn fx:id="inicio" prefWidth="105.5999755859375" text="INICIO" />
+                <TableColumn fx:id="nombre" prefWidth="136.79998779296875" text="ACTIVIDAD" />
+                <TableColumn fx:id="inicio" prefWidth="136.800048828125" text="INICIO" />
                   <TableColumn fx:id="fin" prefWidth="105.60003662109375" text="FIN" />
                   <TableColumn fx:id="plazas" prefWidth="56.0" text="PLAZAS" />
                   <TableColumn fx:id="precioUnitario" prefWidth="75.99993896484375" text="PRECIO/PER" />

@@ -25,6 +25,14 @@ public class PacksDAO {
 //Para cuando una actividad esté seleccionada y tenga las plazas y fechas. 
     //Se inserta en tabla detalle_pack y se guarda un objeto PacksDao en actividadesEnPack.
 
+    public List<Packs> getActividadesEnPack() {
+        return actividadesEnPack;
+    }
+
+    public void setActividadesEnPack(List<Packs> actividadesEnPack) {
+        this.actividadesEnPack = actividadesEnPack;
+    }
+
     public void guardarActividadEnPack(int idActividad, int plazas, LocalDate inicio,
             LocalDate fin) throws SQLException {
         PreparedStatement ps = conn.prepareStatement("INSERT INTO detalle_packs VALUES (?,?,?,?,?)");

@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS tipos (
   PRIMARY KEY (codigo))
 ENGINE = InnoDB;
 
-INSERT INTO tipos VALUES (01, 'Restaurante'),(02, 'Hotel'),(03,'Actividad');
+INSERT INTO tipos VALUES ('1', 'Restaurante'),('2', 'Hotel'),('3','Actividad');
 
 
 
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS actividades (
   nombre VARCHAR(45) NOT NULL,
   descripcion TEXT NULL,
   imagen MEDIUMBLOB NULL,
-  url VARCHAR(100) NULL,
+  url VARCHAR(150) NULL,
   calidad ENUM('1', '2', '3', '4', '5') NULL,
   tipo VARCHAR(10) NOT NULL,
 	precio DECIMAL(6,2) NULL,
@@ -63,30 +63,27 @@ CREATE TABLE IF NOT EXISTS actividades (
 ENGINE = InnoDB;
 
 INSERT INTO actividades VALUE 
-(1, 'Bosforo', 'Crucero por el canal del Bosforo que parte en dos la ciudad de Estambul y que permite ver todas sus maravillas desde el mar.', 
-'/IMAGENES/bosforo1', '5', 03, 59), 
-(2, 'Banyan', 'Restaurante a las orillas del Bósforo donde se podrá saborear los deliciosos platos de la gastronomía Turca.', 
-'/IMAGENES/banyan1','https://www.tripadvisor.es/Restaurant_Review-g293974-d784732-Reviews-Banyan-Istanbul.html' '4', 01, 45),
-(3, 'Galata', 'Hotel con las últimas tendencias de diseño en pleno centro de Estambul.', '/IMAGENES/galata1', 'https://www.booking.com/hotel/tr/galata-istanbul.es.html', '4', 02, 80),
-(4, 'Mezquita Azul', 'Visita por los alrededores e interiores de la majestuosa y mas impresionante mezquita de Estambul.', '/IMAGENES/palacio1', 'https://es.wikipedia.org/wiki/Mezquita_Azul', '5', 03, 20),
-(5, 'Pera', 'Hotel de estilo colonial construido en el siglo XVII, que te transporta a la belleza de otra epoca.', '/IMAGENES/pera2','https://www.booking.com/hotel/tr/pera-palace.es.html', '4' , 02, 95),
-(6, 'Sarnic', 'Restaurante de estilo gótico en el centro de Estambul.', '/IMAGENES/sarnic2','https://www.tripadvisor.es/Restaurant_Review-g293974-d697960-Reviews-Sarnic_Restaurant-Istanbul.html', '4', 01, 76),
-(7, 'Submarino', 'Uno de los únicos hoteles submarinos en el mundo.', '/IMAGENES/submarino1','https://www.viajablog.com/hotel-submarino-en-estambul/', '5', 02,135),
-(8, 'Tugra', 'Restaurante especializado en la cocina turca, un refrescante lugar al lado del mar.', '/IMAGENES/tugra1', 'https://es.restaurantguru.com/Ciragan-Palace-Restaurant-Tugra-Istanbul', '5', 01, 95);
+(1, 'Crucero Bosforo', 'Crucero por el canal del Bosforo que parte en dos la ciudad de Estambul y que permite ver todas sus maravillas desde el mar.', 
+'/IMAGENES/bosforo1','https://www.estambul.es/crucero-bosforo','5', 03, 59), 
+(2, 'Restaurante Banyan', 'Restaurante a las orillas del Bósforo donde se podrá saborear los deliciosos platos de la gastronomía Turca.', 
+'/IMAGENES/banyan1','https://www.tripadvisor.es/Restaurant_Review-g293974-d784732-Reviews-Banyan-Istanbul.html', '4', 01, 45),
+(3, 'Hotel Galata', 'Hotel con las últimas tendencias de diseño en pleno centro de Estambul.', '/IMAGENES/galata1', 'https://www.booking.com/hotel/tr/galata-istanbul.es.html', '4', 02, 80),
+(4, 'Visita Mezquita Azul', 'Visita por los alrededores e interiores de la majestuosa y mas impresionante mezquita de Estambul.', '/IMAGENES/palacio1', 'https://es.wikipedia.org/wiki/Mezquita_Azul', '5', 03, 20),
+(5, 'Hotel Pera', 'Hotel de estilo colonial construido en el siglo XVII, que te transporta a la belleza de otra epoca.', '/IMAGENES/pera2','https://www.booking.com/hotel/tr/pera-palace.es.html', '4' , 02, 95),
+(6, 'REstaurante Sarnic', 'Restaurante de estilo gótico en el centro de Estambul.', '/IMAGENES/sarnic2','https://www.tripadvisor.es/Restaurant_Review-g293974-d697960-Reviews-Sarnic_Restaurant-Istanbul.html', '4', 01, 76),
+(7, 'Hotel Submarino', 'Uno de los únicos hoteles submarinos en el mundo.', '/IMAGENES/submarino1','https://www.viajablog.com/hotel-submarino-en-estambul/', '5', 02,135),
+(8, 'Restaurante Tugra', 'Restaurante especializado en la cocina turca, un refrescante lugar al lado del mar.', '/IMAGENES/tugra1', 'https://es.restaurantguru.com/Ciragan-Palace-Restaurant-Tugra-Istanbul', '5', 01, 95);
+select * from actividades;
 
-/*id_pack no lo utilizamos en la primera etapa.
- Cambio a not null y no es primary key por ahora.
-Cambio fechas a DATE para copiar los ejemplos
-de Raquel*/
 CREATE TABLE IF NOT EXISTS detalle_packs (
-  id_pack INT(10) UNSIGNED NULL,
+  id_pack INT(10) UNSIGNED NOT NULL,
   num_linea INT(2) NOT NULL,
   id_actividad INT(4) NOT NULL,
   num_plazas INT(2) NULL,
-  fecha_inicio DATE NULL,
-  fecha_final DATE NULL,
+  fecha_inicio DATETIME NULL,
+  fecha_final DATETIME NULL,
   duracion TIME NULL,
-  PRIMARY KEY (num_linea),
+  PRIMARY KEY (id_pack, num_linea),
   INDEX fk_pack_actividad_actividad1_idx (id_actividad ASC) ,
   INDEX fk_pack_actividad_pack1_idx (id_pack ASC) ,
   CONSTRAINT fk_pack_actividad_pack1

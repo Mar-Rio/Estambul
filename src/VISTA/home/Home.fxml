@@ -1,19 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="711.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VISTA.home.HomeController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="711.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VISTA.home.HomeController">
     <children>
-      <Pane prefHeight="580.0" prefWidth="711.0">
+      <Pane prefHeight="580.0" prefWidth="712.0">
          <children>
-            <Label layoutX="252.0" layoutY="31.0" prefHeight="103.0" prefWidth="208.0" text="HOME">
+            <ImageView fitHeight="297.0" fitWidth="491.0" layoutX="20.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../IMAGENES/imagenHome.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="titulo" layoutX="88.0" prefHeight="80.0" prefWidth="623.0" text="Descubre Estambúl ">
                <font>
-                  <Font size="70.0" />
+                  <Font name="Linux Biolinum G Regular" size="70.0" />
                </font>
             </Label>
+            <Label fx:id="texto" layoutX="20.0" layoutY="503.0" prefHeight="52.0" prefWidth="672.0" text="La única ciudad en dos continentes,  la antigua Constantinopla, el punto de cruce de las culturas y los colores.">
+               <font>
+                  <Font name="Linux Biolinum G Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="titulo1" layoutX="109.0" layoutY="58.0" prefHeight="77.0" prefWidth="595.0" text="     con 3Grupo">
+               <font>
+                  <Font name="Linux Biolinum G Regular" size="70.0" />
+               </font>
+            </Label>
+            <Label layoutX="519.0" layoutY="234.0" prefHeight="17.0" prefWidth="177.0" text="Si visitas Estambúl" textFill="RED">
+               <font>
+                  <Font name="Linux Biolinum G Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="519.0" layoutY="260.0" prefHeight="17.0" prefWidth="177.0" text="Conocemos los mejores lugares" textFill="#ff7700">
+               <font>
+                  <Font name="Linux Biolinum G Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="519.0" layoutY="291.0" prefHeight="17.0" prefWidth="177.0" text="Para comer" textFill="#aeac00">
+               <font>
+                  <Font name="Linux Biolinum G Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="519.0" layoutY="318.0" prefHeight="17.0" prefWidth="177.0" text="Para descansar" textFill="#02c31c">
+               <font>
+                  <Font name="Linux Biolinum G Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="519.0" layoutY="346.0" prefHeight="17.0" prefWidth="177.0" text="Para descubrir" textFill="#008cab">
+               <font>
+                  <Font name="Linux Biolinum G Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="519.0" layoutY="372.0" prefHeight="17.0" prefWidth="177.0" text="Los reservamos para ti" textFill="#1500ff">
+               <font>
+                  <Font name="Linux Biolinum G Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="519.0" layoutY="402.0" prefHeight="17.0" prefWidth="177.0" text="Tú pones las fechas,..." textFill="#a900ff">
+               <font>
+                  <Font name="Linux Biolinum G Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="519.0" layoutY="430.0" prefHeight="17.0" prefWidth="177.0" text="... nosotros el mejor precio." textFill="#f700bc">
+               <font>
+                  <Font name="Linux Biolinum G Bold" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="52.0" fitWidth="100.0" layoutX="17.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../IMAGENES/monitor.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="52.0" fitWidth="63.0" layoutX="158.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../IMAGENES/descarga.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="52.0" fitWidth="45.0" layoutX="280.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../IMAGENES/avion.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="45.0" fitWidth="62.0" layoutX="384.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../IMAGENES/restaurant.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="45.0" fitWidth="83.0" layoutX="505.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../IMAGENES/bed.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="80.0" fitWidth="121.0" layoutX="616.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../IMAGENES/barco.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
     </children>

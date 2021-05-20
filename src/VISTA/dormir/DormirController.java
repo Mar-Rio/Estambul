@@ -1,6 +1,6 @@
 package VISTA.dormir;
 
-import VISTA.comer.*;
+
 import VISTA.inicio.*;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
