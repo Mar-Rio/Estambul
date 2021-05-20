@@ -10,13 +10,18 @@ import MODELO.Actividades;
 import MODELO.Packs;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
@@ -30,7 +35,8 @@ import javafx.scene.input.MouseEvent;
  * @author cosca
  */
 public class CarroController implements Initializable {
-private PacksDAO gestionPack = new PacksDAO();
+
+    private PacksDAO gestionPack = new PacksDAO();
     @FXML
     private TableView<Packs> tablaActividades;
     @FXML
@@ -48,36 +54,39 @@ private PacksDAO gestionPack = new PacksDAO();
     @FXML
     private Button confirmarPack;
     ObservableList<Packs> actividadesGuardadas;
-    
-      @Override
+
+    @Override
     public void initialize(URL url, ResourceBundle rb) {
-        if(!gestionPack.getActividadesEnPack().isEmpty()) {
-        actividadesGuardadas =  FXCollections.observableArrayList(gestionPack.getActividadesEnPack());
-        tablaActividades.setItems(actividadesGuardadas);
-        
-        Actividades actividad = new Actividades();
-        
-        //nombre.setCellValueFactory(new PropertyValueFactory<>());
-        
-    }  else {
+        if (!gestionPack.getActividadesEnPack().isEmpty()) {
+            actividadesGuardadas = FXCollections.observableArrayList(gestionPack.getActividadesEnPack());
+            tablaActividades.setItems(actividadesGuardadas);
+            nombre.setCellValueFactory(new PropertyValueFactory<>("nombreActividad"));
+            inicio.setCellValueFactory(new PropertyValueFactory<>("fechaInicio"));
+            fin.setCellValueFactory(new PropertyValueFactory<>("fechaFin"));
+            precioUnitario.setCellValueFactory(new PropertyValueFactory<>("precioUnitario"));
+            precioTotal.setCellValueFactory(new PropertyValueFactory<>("precioTotal"));
+
+        } else {
             tablaActividades.setPlaceholder(new Label("No hay ninguna actividad seleccionada."));
-            }
-        TableViewSelectionModel selectionModel = tablaActividades.getSelectionModel();
-        selectionModel.setSelectionMode(SelectionMode.SINGLE);
-        
-        
-        
-        //actividadesGuardadas.getSelectionModel().getSelectedItems();
-
+        }
+        tablaActividades.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
-
 
     @FXML
     private void eliminarActividad(MouseEvent event) {
-    }
+        if (event.getClickCount() == 2) {
+            Alert dialogoAlerta = new Alert(Alert.AlertType.CONFIRMATION);
+            dialogoAlerta.setTitle("¿Vas a eliminar la siguiente actividad?");
+            dialogoAlerta.setContentText(tablaActividades.getSelectionModel().getSelectedItem().toString());
 
-    @FXML
-    private void guardarPack(ActionEvent event) {
+            Optional<ButtonType> confirmacion = dialogoAlerta.showAndWait();
+            if (confirmacion.get() == ButtonType.OK) {
+                int indice = tablaActividades.getSelectionModel().getSelectedIndex();
+                gestionPack.borrarActividad(indice);
+                actividadesGuardadas.remove(indice);
+                tablaActividades.setItems(actividadesGuardadas);
+            }
+        }
+
     }
-    
 }

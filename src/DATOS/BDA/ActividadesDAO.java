@@ -94,7 +94,7 @@ public class ActividadesDAO {
         ps.setString(4, nuevaActividad.getUrl());
         ps.setString(5, nuevaActividad.getCalidad());
         ps.setString(6, nuevaActividad.getTipo());
-        ps.setInt(7, nuevaActividad.getPrecio());       
+        ps.setDouble(7, nuevaActividad.getPrecio());       
         return ps.executeUpdate();
     }
     

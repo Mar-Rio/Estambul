@@ -10,8 +10,9 @@ package MODELO;
  * @author Adrian Pardo Moreno
  */
 public class Actividades {
-      private int id,
-            precio;
+
+    private int id;
+    private double precio;
     private String nombre,
             descripcion,
             imagen,
@@ -30,7 +31,7 @@ public class Actividades {
         this.id = id;
     }
 
-    public int getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 

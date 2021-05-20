@@ -6,6 +6,7 @@
 package DATOS.BDA;
 
 import static DATOS.BDA.ConexionBDA.conn;
+import MODELO.Actividades;
 import MODELO.Packs;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -33,19 +34,18 @@ public class PacksDAO {
         this.actividadesEnPack = actividadesEnPack;
     }
 
-    public void guardarActividadEnPack(int idActividad, int plazas, LocalDate inicio,
+    public void guardarActividadEnPack(Actividades actividad, int plazas, LocalDate inicio,
             LocalDate fin) throws SQLException {
         PreparedStatement ps = conn.prepareStatement("INSERT INTO detalle_packs VALUES (?,?,?,?,?)");
-        ps.setInt(1, idActividad);
+        ps.setInt(1, actividad.getId());
         ps.setInt(2, plazas);
         ps.setDate(3, Date.valueOf(inicio));
         ps.setDate(4, Date.valueOf(fin));
-        Packs nuevaActividad = new Packs();
-        nuevaActividad.setIdActividad(idActividad);
-        nuevaActividad.setNumPlazas(plazas);
-        nuevaActividad.setFechaInicio(inicio);
-        nuevaActividad.setFechaFin(fin);
+        Packs nuevaActividad = new Packs(actividad, plazas, inicio, fin);
         actividadesEnPack.add(nuevaActividad);
     }
-
+    
+    public void borrarActividad(int indice) {
+       actividadesEnPack.remove(indice);
+    }
 }
