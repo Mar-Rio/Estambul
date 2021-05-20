@@ -13,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
@@ -27,13 +28,19 @@ import javafx.scene.layout.Pane;
 public class HomeController implements Initializable{
 
     private Pane panelCarga;
+    @FXML
+    private Label texto;
+    @FXML
+    private Label titulo;
+    @FXML
+    private Label titulo1;
 
    
 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+       
     }
 
 
